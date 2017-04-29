@@ -34,7 +34,7 @@
 		<hr>
 
 		<h3><strong>Question 1</strong></h3>
-		<h4>I like plans</h4>
+		<h4>I like plans.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q1">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -45,7 +45,7 @@
       	</select>
 
 		<h3><strong>Question 2</strong></h3>
-		<h4>I am creative</h4>
+		<h4>I am creative.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q2">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -69,7 +69,7 @@
 
 
 		<h3><strong>Question 4</strong></h3>
-		<h4>George is the greatest Beatle</h4>
+		<h4>George is the greatest Beatle.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q4">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -81,7 +81,7 @@
 
 
 		<h3><strong>Question 5</strong></h3>
-		<h4>My temper is unpredictable</h4>
+		<h4>My temper is unpredictable.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q5">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -93,7 +93,7 @@
 
 
 		<h3><strong>Question 6</strong></h3>
-		<h4>I have seen a UFO</h4>
+		<h4>I saw a UFO.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q6">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -105,7 +105,7 @@
 
 
 		<h3><strong>Question 7</strong></h3>
-		<h4>I like people who voted for Donald Trump</h4>
+		<h4>I like people who voted for Donald Trump.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q7">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -116,7 +116,7 @@
       	</select>
 
 		<h3><strong>Question 8</strong></h3>
-		<h4>I live for Monday Night Football</h4>
+		<h4>My family lives for Monday Night Football.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q8">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -127,7 +127,7 @@
       	</select>
 
 		<h3><strong>Question 9</strong></h3>
-		<h4>I pray as much as possible</h4>
+		<h4>I pray as much as possible.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q9">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -138,7 +138,7 @@
       	</select>
 
 		<h3><strong>Question 10</strong></h3>
-		<h4>I tire easily when hiking</h4>
+		<h4>You tire easily when hiking.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q10">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -158,7 +158,7 @@
 		<hr>
 	    <footer class="footer">
 	      <div class="container">
-		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/JulieBurk/FriendFinder">GitHub Repo</a></p>
+		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
 	      </div>
 	    </footer>
 
@@ -226,14 +226,15 @@
 	    	var userData = {
 	    		name: $("#name").val(),
 	    		photo: $("#photo").val(),
-	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
 	    	}
 
 
+	    	// Grab the URL of the website
+	    	var currentURL = window.location.origin;
 
 	    	// AJAX post the data to the friends API. 
-	    	$.post("/api/survey", userData, function(data){
-            console.log(data);
+	    	$.post(currentURL + "/api/friends", userData, function(data){
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		$("#matchName").text(data.name);
